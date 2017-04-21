@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+        <plugin type="tk.mybatis.mybatis-mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mybatis-mapper.common.Mapper"/>
+            <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+            <property name="caseSensitive" value="true"/>
+        </plugin>
+
+        <jdbcConnection driverClass="org.h2.Driver"
+                        connectionURL="jdbc:h2:file:D:/Workspace/Database/h2/data/eps"
+                        userId="exam-paper-store"
+                        password="exam-paper-store">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.chanjet.edu.eps.dal.domain"
+                            targetProject="D:\Workspace\Projects\chanjet.com\chanjetedu-eps-parent\chanjetedu-eps-dal\src\main\java\"/>
+
+        <sqlMapGenerator targetPackage="com.chanjet.edu.eps.dal.mapper"
+                         targetProject="D:\Workspace\Projects\chanjet.com\chanjetedu-eps-parent\chanjetedu-eps-dal\src\main\java\"/>
+
+        <javaClientGenerator targetPackage="com.chanjet.edu.eps.dal.mapper"
+                             targetProject="D:\Workspace\Projects\chanjet.com\chanjetedu-eps-parent\chanjetedu-eps-dal\src\main\java\"
+                             type="XMLMAPPER"/>
+
+        <table tableName="%">
+            <generatedKey column="id" sqlStatement="Postgrepsql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>

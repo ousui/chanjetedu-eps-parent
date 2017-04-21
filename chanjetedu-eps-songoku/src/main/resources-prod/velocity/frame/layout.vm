@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Spring MVC and Velocity</title>
+    <link rel="shortcut icon" href="#springUrl('/favicon.ico')" type="image/x-icon" />
+    <script language="JavaScript" src="#springUrl('/resources/test.js')" ></script>
+    #include('')
+</head>
+<body>
+    <h1>Spring MVC and Velocity 4 Prod</h1>
+    <hr>
+        <div id="screen_content">
+            $screen_content
+        </div>
+    <hr>
+<hr />
+Copyright &copy 2014 lm
+</body>
+</html>

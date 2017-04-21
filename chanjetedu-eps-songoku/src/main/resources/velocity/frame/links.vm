@@ -1,0 +1,72 @@
+
+<style>
+    .links {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 0;
+    }
+    .links li {
+        display: inline-block;
+        /*float: left;*/
+        width: 150px;
+        padding: 5px 5px 5px 5px;
+        margin-right: 1px;
+        border: 1px solid white;
+        background-color: #000;
+        cursor: pointer;
+    }
+    .links li a{
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .links li:active {
+        background-color: #888f95;
+        font-weight: bold;
+        padding-left: 1px;
+    }
+</style>
+<ul class="links">
+    <li>
+        <a href="#springUrl('/')">/index</a>
+    </li>
+    <li>
+        <a href="#springUrl('/public/')">/public/</a>
+    </li>
+    <li>
+        <a href="#springUrl("/helloworld/index")">/helloworld/index</a>
+    </li>
+    <li>
+        <a href="#springUrl("/helloworld/1")">/helloworld/1</a>
+    </li>
+    <li>
+        <a href="#springUrl("/helloworld/autoindex")">/helloworld/autoindex</a>
+    </li>
+    <li>
+        <a href="#springUrl("/internal/ex")">/internal/ex</a>
+    </li>
+    <li>
+        <a href="#springUrl("/internal/filters")">/internal/filters</a>
+    </li>
+    <li>
+        <a href="#springUrl("/internal/update")">/internal/update</a>
+    </li>
+    <li>
+        <a href="#springUrl('/auth/login')">/auth/login</a>
+    </li>
+    <li>
+        <a href="#springUrl('/user/')">/user/</a>
+    </li>
+    <li>
+        <a href="#springUrl('/yanzhi/')">/yanzhi/</a>
+    </li>
+
+    <li>
+        <form action="#springUrl('/auth/logout')" method="post">
+            <button type="submit" style="border: none; width: 100%; height: 100%; cursor: pointer; background-color: transparent; color: white;text-align: left;" >/auth/logout</button>
+        </form>
+    </li>
+</ul>

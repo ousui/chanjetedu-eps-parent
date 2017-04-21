@@ -1,0 +1,10 @@
+你得颜值
+$context.getKeys()
+
+<br>
+
+$display.list($lists)
+<br>
+$display.printf("display.printf test %d %d %s", 1, 2, "string")
+<br>
+$display.message("display.message test {1} {0} {2} {1}", 1, 2, "string")

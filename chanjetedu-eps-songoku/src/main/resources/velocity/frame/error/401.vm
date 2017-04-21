@@ -1,0 +1,6 @@
+##404
+<div>
+    访问的资源未找到！
+    <br>
+    <span style="color: red;">$!_ex.getMessage()</span>
+</div>

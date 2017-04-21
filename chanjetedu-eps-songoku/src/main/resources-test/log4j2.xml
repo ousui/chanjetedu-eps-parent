@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug" strict="true" name="log4j2-test">
+    <Properties>
+        <Property name="filename">logs/webapp-songoku.log</Property>
+    </Properties>
+    <Filter type="ThresholdFilter" level="trace"/>
+
+    <Appenders>
+        <Appender name="STDOUT" type="Console" >
+            <Layout type="PatternLayout" pattern="%m MDC%X%n"/>
+            <Filters>
+                <Filter type="MarkerFilter" marker="FLOW" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <Filter type="MarkerFilter" marker="EXCEPTION" onMatch="DENY" onMismatch="ACCEPT"/>
+            </Filters>
+        </Appender>
+        <Appender name="FLOW" type="Console" >
+            <Layout type="PatternLayout" pattern="%C{1}.%M %m %ex%n"/><!-- class and line number -->
+            <Filters>
+                <Filter type="MarkerFilter" marker="FLOW" onMatch="ACCEPT" onMismatch="NEUTRAL"/>
+                <Filter type="MarkerFilter" marker="EXCEPTION" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+        </Appender>
+        <Appender name="FILE" type="File"  fileName="${filename}">
+            <Layout type="PatternLayout">
+                <Pattern>%d %p %C{1.} [%t] %m%n</Pattern>
+            </Layout>
+        </Appender>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="org.springframework.web.servlet.view.AbstractTemplateView" level="INFO" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+
+        <Root level="DEBUG">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="FILE"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

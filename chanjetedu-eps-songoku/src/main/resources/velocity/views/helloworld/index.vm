@@ -1,0 +1,21 @@
+#springMessageText($all)
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>KEY</td>
+            <td>VALUE</td>
+            <td>CREATE TIME</td>
+        </tr>
+    </thead>
+    <tbody>
+        #foreach( $hw in $all)
+            <tr>
+                <td>$hw.id</td>
+                <td>$hw.key</td>
+                <td>$hw.value</td>
+                <td>$date.format('yy/MM-dd HH:mm:ss', $hw.createTime)</td>
+            </tr>
+        #end
+    </tbody>
+</table>

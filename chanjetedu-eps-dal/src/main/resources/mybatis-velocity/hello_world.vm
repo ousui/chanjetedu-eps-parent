@@ -1,0 +1,21 @@
+##-- selectByVmTpl
+## 文档参考 http://www.mybatis.org/velocity-scripting/
+## 默认的 mybatis 中有一个取所有参数的 map，变量名在 volecity 中为_parameter
+
+## 执行正确
+SELECT * FROM HELLO_WORLD WHERE ID < @{id }
+
+## 执行正确
+###set( $p1 = $_parameter.id )
+##SELECT * FROM HELLO_WORLD WHERE ID < @{p1 }
+
+## 执行正确
+###set( $p2 = $_parameter.param1 )
+##SELECT * FROM HELLO_WORLD WHERE ID < @{p2 } }
+
+## 执行正确
+##SELECT * FROM HELLO_WORLD WHERE ID < @{_parameter } }
+
+## 执行 *错误*
+##SELECT * FROM HELLO_WORLD WHERE ID < @{_parameter.id } }
+##SELECT * FROM HELLO_WORLD WHERE ID < @{_parameter.param1 } }

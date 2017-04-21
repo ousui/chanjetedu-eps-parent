@@ -1,0 +1,5 @@
+<div>
+    服务器内部错误！
+    <br>
+    <span style="color: red;">$!_ex.getMessage()</span>
+</div>
